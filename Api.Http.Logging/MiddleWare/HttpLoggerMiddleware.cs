@@ -12,9 +12,13 @@ public class HttpLoggerMiddleware(RequestDelegate next, string serviceName)
     public async Task InvokeAsync(HttpContext httpContext)
     {
         IHttpLogger HttpLogger = httpContext.RequestServices.GetRequiredService<IHttpLogger>();
+
         Log log = new Log(serviceName);
+
         HttpRequest request = httpContext.Request;
+
         log.TraceId = httpContext.TraceIdentifier;
+
         {
             var httpConnectionFeature = httpContext.Features.Get<Microsoft.AspNetCore.Http.Features.IHttpConnectionFeature>();
 
@@ -30,6 +34,7 @@ public class HttpLoggerMiddleware(RequestDelegate next, string serviceName)
                     .Where(x => !string.IsNullOrEmpty(x))
                     .OfType<string>()
                     .ToArray();
+
                 if(IdAddresses is not null && IdAddresses.Any())
                 {
                     string pattern = "^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$";

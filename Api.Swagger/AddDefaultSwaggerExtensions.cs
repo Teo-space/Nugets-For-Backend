@@ -5,8 +5,6 @@ public static class AddDefaultSwaggerExtensions
     /// <summary>
     /// Add Swagger with ApiKey Auth
     /// </summary>
-    /// <param name="services"></param>
-    /// <param name="title"></param>
     /// <param name="xmlComments">Path.Combine(AppContext.BaseDirectory, $"File.xml")</param>
     public static IServiceCollection AddDefaultSwagger(this IServiceCollection services, string title, params string[] xmlComments)
     {

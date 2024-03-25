@@ -5,8 +5,6 @@ public static class AddJWTSwaggerExtensions
     /// <summary>
     /// Add Swagger with Bearer JWT
     /// </summary>
-    /// <param name="services"></param>
-    /// <param name="title"></param>
     /// <param name="xmlComments">Path.Combine(AppContext.BaseDirectory, $"File.xml")</param>
     public static IServiceCollection AddJWTSwagger(this IServiceCollection services, string title, params string[] xmlComments)
     {

@@ -1,6 +1,7 @@
 ﻿public partial class Results
 {
-    public static Result<T> Errors<T>(string Type, string Detail, IReadOnlyCollection<FieldError> errors) => new Result<T>()
+    public static Result<T> Errors<T>(string Type, string Detail, IReadOnlyCollection<FieldError> errors) 
+        => new Result<T>()
     {
         Value = default(T)!,
         Success = false,

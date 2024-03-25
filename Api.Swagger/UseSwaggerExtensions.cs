@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.OpenApi.Models;
 
 namespace Api.Swagger;
 

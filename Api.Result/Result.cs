@@ -9,7 +9,7 @@
 
 
     public static implicit operator T(Result<T> Result) => Result.Value;
-    public static explicit operator Result<T>(T o) => Results.Ok<T>(o);
+    public static implicit operator Result<T>(T o) => Results.Ok<T>(o);
 
     public static implicit operator string(Result<T> Result)
         => $"Result<{typeof(T)}>(Success:{Result.Success}, Type: {Result.Type}) Value: {Result?.Value?.ToString()}";

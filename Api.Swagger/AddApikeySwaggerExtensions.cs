@@ -5,8 +5,6 @@ public static class AddApikeySwaggerExtensions
     /// <summary>
     /// Add Swagger with ApiKey Auth
     /// </summary>
-    /// <param name="services"></param>
-    /// <param name="title"></param>
     /// <param name="xmlComments">Path.Combine(AppContext.BaseDirectory, $"File.xml")</param>
     public static IServiceCollection AddApikeySwagger(this IServiceCollection services, string title, params string[] xmlComments)
     {
@@ -28,6 +26,7 @@ public static class AddApikeySwaggerExtensions
                 In = ParameterLocation.Header,
                 Scheme = "ApiKeyScheme"
             });
+
             var key = new OpenApiSecurityScheme()
             {
                 Reference = new OpenApiReference
@@ -37,12 +36,15 @@ public static class AddApikeySwaggerExtensions
                 },
                 In = ParameterLocation.Header
             };
+
             var requirement = new OpenApiSecurityRequirement
             {
                         { key, new List<string>() }
             };
+
             options.AddSecurityRequirement(requirement);
         });
+
         return services;
     }
 }
