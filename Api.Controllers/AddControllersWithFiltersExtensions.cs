@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using System.Text.Json;
 
 namespace Api.Controllers;
 
@@ -33,6 +34,7 @@ public static class AddControllersWithFiltersExtensions
             options.JsonSerializerOptions.WriteIndented = true;
             options.JsonSerializerOptions.MaxDepth = 10;
             options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.Never;
+            options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
         });
 
         return services;
