@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Net;
-using Api.Exceptions;
+
 
 namespace Api.Filters.Filters;
 
