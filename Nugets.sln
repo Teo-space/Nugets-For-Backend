@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Result", "Api.Result\Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Swagger", "Api.Swagger\Api.Swagger.csproj", "{BEE6CD22-114E-419F-BC9D-468645235F0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Auth.Jwt", "Api.Auth.Jwt\Api.Auth.Jwt.csproj", "{A09B0387-5D5B-4EFB-A6AF-21C9847A5EE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Auth.Jwt", "Api.Auth.Jwt\Api.Auth.Jwt.csproj", "{A09B0387-5D5B-4EFB-A6AF-21C9847A5EE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.RateLimiter", "Api.RateLimiter\Api.RateLimiter.csproj", "{A57FB85C-51DC-43CB-A2B5-E67FAE3D05C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{A09B0387-5D5B-4EFB-A6AF-21C9847A5EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A09B0387-5D5B-4EFB-A6AF-21C9847A5EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A09B0387-5D5B-4EFB-A6AF-21C9847A5EE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A57FB85C-51DC-43CB-A2B5-E67FAE3D05C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A57FB85C-51DC-43CB-A2B5-E67FAE3D05C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A57FB85C-51DC-43CB-A2B5-E67FAE3D05C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A57FB85C-51DC-43CB-A2B5-E67FAE3D05C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
