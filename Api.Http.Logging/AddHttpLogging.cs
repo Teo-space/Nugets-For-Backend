@@ -2,13 +2,9 @@
 using Api.Http.Logging.MiddleWare;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.HttpOverrides;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
-namespace Api.Http.Logging;
-
-public static class DI
+public static class AddHttpLogging
 {
     public static IApplicationBuilder UseForwardedForHeaders(this IApplicationBuilder app)
     {

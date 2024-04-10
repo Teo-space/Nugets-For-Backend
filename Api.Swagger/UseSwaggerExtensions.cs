@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
 
-namespace Api.Swagger;
-
 public static class UseSwaggerExtensions
 {
     /// <summary>

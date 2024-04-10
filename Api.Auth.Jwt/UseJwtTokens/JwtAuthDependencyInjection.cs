@@ -5,14 +5,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace Api.Auth.Jwt.UseJwtTokens;
-
 public static class JwtAuthDependencyInjection
 {
     public static void AddUserAccessor(this IServiceCollection services)
     {
         services.AddHttpContextAccessor();
-        services.AddScoped<IUser, UserAccessor.UserAccessor>();
+        services.AddScoped<IUser, UserAccessor>();
     }
 
     public static void AddTestUserAccessor(this IServiceCollection services)

@@ -1,5 +1,4 @@
-﻿namespace Api.Exceptions;
-
+﻿
 /// <summary>
 /// Ошибка ограничений бизнес логики. Код 409
 /// </summary>
