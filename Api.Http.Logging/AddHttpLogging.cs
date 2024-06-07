@@ -14,6 +14,7 @@ public static class AddHttpLogging
         });
         return app;
     }
+
     /// <summary>
     /// Добавляет Middleware для логирования запросов.
     /// Требует Scoped IHttpLogger
@@ -24,11 +25,14 @@ public static class AddHttpLogging
         return app;
     }
 
+
     public static IServiceCollection AddConsoleHttpLogger(this IServiceCollection services)
     {
         services.AddScoped<IHttpLogger, ConsoleHttpLogger>();
         return services;
     }
+
+
     public static IServiceCollection AddHttpLogger(this IServiceCollection services)
     {
         services.AddScoped<IHttpLogger, HttpLogger>();

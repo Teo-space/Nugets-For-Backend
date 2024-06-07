@@ -6,7 +6,8 @@ using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
 
 public static class AddFluentValidationWithValidatorsExtensions
 {
-    public static IServiceCollection AddFluentValidationWithValidators(this IServiceCollection services, params Assembly[] assemblies)
+    public static IServiceCollection AddFluentValidationWithValidators(this IServiceCollection services, 
+        params Assembly[] assemblies)
     {
         services.AddFluentValidationAutoValidation(cf => { cf.DisableDataAnnotationsValidation = true; })
             .AddFluentValidationClientsideAdapters();
