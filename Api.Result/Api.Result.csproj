@@ -6,6 +6,12 @@
 		<Nullable>disable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageOutputPath>..\Packages</PackageOutputPath>
+
+		<Authors>iteo.space</Authors>
+		<Description>Классы для возврата стандартизированных ошибок из апи</Description>
+		<PackageProjectUrl>https://github.com/Teo-space/Nugets</PackageProjectUrl>
+		<PackageTags>Result</PackageTags>
+		<PackageReleaseNotes></PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
