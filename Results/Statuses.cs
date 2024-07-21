@@ -18,6 +18,9 @@
     /// 404
     /// </summary>
     public static string NotFound => "NotFound";
+    /// <summary>
+    /// 404
+    /// </summary>
     public static string ParentNotFound => "ParentNotFound";
     /// <summary>
     /// 409
