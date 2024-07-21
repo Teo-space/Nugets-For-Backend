@@ -22,7 +22,10 @@ public static class AddControllersWithFiltersExtensions
                         ErrorMessages = modelError.Value!.Errors.Select(x => x.ErrorMessage).ToArray()
                     }).ToArray();
 
-                var result = Results.Errors<HttpStatusCode>(HttpStatusCode.BadRequest.ToString(), "ValidationErrors", validationDetails);
+                var result = Results.Errors<HttpStatusCode>(
+                    Type: HttpStatusCode.BadRequest.ToString(), 
+                    Detail: "ValidationErrors", 
+                    errors: validationDetails);
 
                 return new BadRequestObjectResult(result);
             };
@@ -31,7 +34,8 @@ public static class AddControllersWithFiltersExtensions
         {
             options.JsonSerializerOptions.WriteIndented = true;
             options.JsonSerializerOptions.MaxDepth = 10;
-            options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.Never;
+            options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.Never;
+            options.JsonSerializerOptions.NumberHandling = JsonNumberHandling.AllowReadingFromString;
             //options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseUpper;
             options.JsonSerializerOptions.PropertyNamingPolicy = default;
         });
