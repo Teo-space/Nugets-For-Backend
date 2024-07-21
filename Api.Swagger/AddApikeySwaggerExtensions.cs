@@ -39,7 +39,7 @@ public static class AddApikeySwaggerExtensions
 
             var requirement = new OpenApiSecurityRequirement
             {
-                        { key, new List<string>() }
+                { key, new List<string>() }
             };
 
             options.AddSecurityRequirement(requirement);
@@ -47,4 +47,5 @@ public static class AddApikeySwaggerExtensions
 
         return services;
     }
+
 }
