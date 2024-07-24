@@ -8,6 +8,7 @@
 		<PackageOutputPath>..\Packages</PackageOutputPath>
 
 		<Version>8.0.0</Version>
+		
 		<Authors>iteo.space</Authors>
 		<Description>Методы расширения для CORS</Description>
 		<PackageProjectUrl>https://github.com/Teo-space/Nugets</PackageProjectUrl>

@@ -8,6 +8,7 @@
 		<PackageOutputPath>..\Packages</PackageOutputPath>
 
 		<Version>8.0.0</Version>
+		
 		<Authors>iteo.space</Authors>
 		<Description>Фильтр ошибок API для возврата стандартизированных ошибок со статус кодами</Description>
 		<PackageProjectUrl>https://github.com/Teo-space/Nugets</PackageProjectUrl>

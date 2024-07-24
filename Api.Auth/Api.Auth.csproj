@@ -6,6 +6,9 @@
 		<Nullable>disable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageOutputPath>..\Packages</PackageOutputPath>
+
+		<Version>8.0.0</Version>
+
 	</PropertyGroup>
 
 	<ItemGroup>

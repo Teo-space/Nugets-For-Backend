@@ -8,6 +8,7 @@
 		<PackageOutputPath>..\Packages</PackageOutputPath>
 
 		<Version>8.0.0</Version>
+		
 		<Authors>iteo.space</Authors>
 		<Description>Аутентификация и авторизация по схеме JWT Barear Token</Description>
 		<PackageProjectUrl>https://github.com/Teo-space/Nugets</PackageProjectUrl>
