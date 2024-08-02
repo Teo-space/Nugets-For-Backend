@@ -3,47 +3,47 @@
     /// <summary>
     /// 200
     /// </summary>
-    public static string Ok => "Ok";
+    public const string Ok = "Ok";
     /// <summary>
     /// 204
     /// </summary>
-    public static string NoContent => "NoContent";
+    public const string NoContent = "NoContent";
 
 
     /// <summary>
     /// 400
     /// </summary>
-    public static string BadRequest => "BadRequest";
+    public const string BadRequest = "BadRequest";
     /// <summary>
     /// 404
     /// </summary>
-    public static string NotFound => "NotFound";
+    public const string NotFound = "NotFound";
     /// <summary>
     /// 404
     /// </summary>
-    public static string ParentNotFound => "ParentNotFound";
+    public const string ParentNotFound = "ParentNotFound";
     /// <summary>
     /// 409
     /// </summary>
-    public static string Conflict => "Conflict";
+    public const string Conflict = "Conflict";
     /// <summary>
     /// 410
     /// </summary>
-    public static string Deleted => "Deleted";
+    public const string Deleted = "Deleted";
     /// <summary>
     /// 401
     /// </summary>
-    public static string Unauthorized => "Unauthorized";
+    public const string Unauthorized = "Unauthorized";
     /// <summary>
     /// 403
     /// </summary>
-    public static string NotEnoughPermissions => "NotEnoughPermissions";
+    public const string NotEnoughPermissions = "NotEnoughPermissions";
 
 
     /// <summary>
     /// 500
     /// </summary>
-    public static string InternalServerError => "InternalServerError";
+    public const string InternalServerError = "InternalServerError";
 
 
 
