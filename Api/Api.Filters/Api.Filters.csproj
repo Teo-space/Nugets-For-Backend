@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageOutputPath>..\..\Packages</PackageOutputPath>
+
+		<Version>8.0.0</Version>
+		
+		<Authors>iteo.space</Authors>
+		<Description>Фильтр ошибок API для возврата стандартизированных ошибок со статус кодами</Description>
+		<PackageProjectUrl>https://github.com/Teo-space/Nugets</PackageProjectUrl>
+		<PackageTags>Filters</PackageTags>
+		<PackageReleaseNotes></PackageReleaseNotes>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="MiddleWares\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Api.Exceptions\Api.Exceptions.csproj" />
+	  <ProjectReference Include="..\Api.Result\Api.Result.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,24 +1,25 @@
 <Solution>
   <Folder Name="/Infrastructure/">
-    <Project Path="Infrastructure.EntityFrameworkCore\Infrastructure.EntityFrameworkCore.csproj" />
+    <Project Path="Infrastructure\Infrastructure.EntityFrameworkCore\Infrastructure.EntityFrameworkCore.csproj" />
+    <Project Path="Infrastructure\Microsoft.EntityFrameworkCore\Microsoft.EntityFrameworkCore.csproj" />
   </Folder>
   <Folder Name="/Common/">
-    <Project Path="Results\Results.csproj" />
+    <Project Path="Common\Results\Results.csproj" />
   </Folder>
   <Folder Name="/Api/">
-    <Project Path="Api.Auth.Jwt\Api.Auth.Jwt.csproj" />
-    <Project Path="Api.Auth\Api.Auth.csproj" />
-    <Project Path="Api.Controllers\Api.Controllers.csproj" />
-    <Project Path="Api.Cors\Api.Cors.csproj" />
-    <Project Path="Api.Exceptions\Api.Exceptions.csproj" />
-    <Project Path="Api.Filters\Api.Filters.csproj" />
-    <Project Path="Api.FluentValidation\Api.FluentValidation.csproj" />
-    <Project Path="Api.Headers\Api.Headers.csproj" />
-    <Project Path="Api.Http.Logging\Api.Http.Logging.csproj" />
-    <Project Path="Api.IpAddress\Api.IpAddress.csproj" Type="Classic C#" />
-    <Project Path="Api.Logging\Api.Logging.csproj" />
-    <Project Path="Api.RateLimiter\Api.RateLimiter.csproj" />
-    <Project Path="Api.Result\Api.Result.csproj" />
-    <Project Path="Api.Swagger\Api.Swagger.csproj" />
+    <Project Path="Api\Api.Auth.Jwt\Api.Auth.Jwt.csproj" />
+    <Project Path="Api\Api.Auth\Api.Auth.csproj" />
+    <Project Path="Api\Api.Controllers\Api.Controllers.csproj" />
+    <Project Path="Api\Api.Cors\Api.Cors.csproj" />
+    <Project Path="Api\Api.Exceptions\Api.Exceptions.csproj" />
+    <Project Path="Api\Api.Filters\Api.Filters.csproj" />
+    <Project Path="Api\Api.FluentValidation\Api.FluentValidation.csproj" />
+    <Project Path="Api\Api.Headers\Api.Headers.csproj" />
+    <Project Path="Api\Api.Http.Logging\Api.Http.Logging.csproj" />
+    <Project Path="Api\Api.IpAddress\Api.IpAddress.csproj" />
+    <Project Path="Api\Api.Logging\Api.Logging.csproj" />
+    <Project Path="Api\Api.RateLimiter\Api.RateLimiter.csproj" />
+    <Project Path="Api\Api.Result\Api.Result.csproj" />
+    <Project Path="Api\Api.Swagger\Api.Swagger.csproj" />
   </Folder>
 </Solution>

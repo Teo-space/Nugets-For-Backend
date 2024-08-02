@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageOutputPath>..\..\Packages</PackageOutputPath>
+
+		<Version>8.0.0</Version>
+		
+		<Authors>iteo.space</Authors>
+		<Description>Классы исключений</Description>
+		<PackageProjectUrl>https://github.com/Teo-space/Nugets</PackageProjectUrl>
+		<PackageTags>Exceptions</PackageTags>
+		<PackageReleaseNotes></PackageReleaseNotes>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+
+</Project>
