@@ -10,14 +10,14 @@
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<NoWarn>$(NoWarn);1591</NoWarn>
 		
-		<Version>8.0.1</Version>
+		<Version>8.0.2</Version>
 
 		<Authors>iteo.space</Authors>
 		<Description>Pattern Result</Description>
 		<PackageProjectUrl>https://github.com/Teo-space/Nugets</PackageProjectUrl>
 		<PackageTags>Results</PackageTags>
 		<PackageReleaseNotes>
-			Add implicit cast to ActionResult
+			Add Results.Ok with detail
 		</PackageReleaseNotes>
 	</PropertyGroup>
 
