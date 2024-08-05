@@ -13,7 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Enum\Enum.csproj" />
+		<ProjectReference Include="..\..\Common\Enum\Enum.csproj" />
 	</ItemGroup>
 
 </Project>
