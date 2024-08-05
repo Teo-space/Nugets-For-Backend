@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Samples/">
-    <Project Path="Enum.Sample\Enum.Sample.csproj" />
+    <Project Path="Samples\Enum.Sample\Enum.Sample.csproj" />
+    <Project Path="Samples\PasswordHashing\PasswordHashing.csproj" />
     <Project Path="Samples\Snowflake.Sample\Snowflake.Sample.csproj" />
   </Folder>
   <Folder Name="/Infrastructure/">
@@ -8,10 +9,10 @@
     <Project Path="Infrastructure\Microsoft.EntityFrameworkCore\Microsoft.EntityFrameworkCore.csproj" />
   </Folder>
   <Folder Name="/Common/">
+    <Project Path="Common\Enum\Enum.csproj" />
+    <Project Path="Common\PasswordHasher\PasswordHasher.csproj" />
     <Project Path="Common\Results\Results.csproj" />
     <Project Path="Common\Snowflake\Snowflake.csproj" />
-    <Project Path="Enum\Enum.csproj" />
-    <Project Path="PasswordHasher\PasswordHasher.csproj" Type="Classic C#" />
   </Folder>
   <Folder Name="/Api/">
     <Project Path="Api\Api.Auth.Jwt\Api.Auth.Jwt.csproj" />
