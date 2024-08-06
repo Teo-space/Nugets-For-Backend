@@ -10,14 +10,14 @@
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<NoWarn>$(NoWarn);1591</NoWarn>
 		
-		<Version>8.0.2</Version>
+		<Version>8.0.3</Version>
 
 		<Authors>iteo.space</Authors>
 		<Description>Pattern Result</Description>
 		<PackageProjectUrl>https://github.com/Teo-space/Nugets</PackageProjectUrl>
 		<PackageTags>Results</PackageTags>
 		<PackageReleaseNotes>
-			Add Results.Ok with detail
+			Add Results.MapTo
 		</PackageReleaseNotes>
 	</PropertyGroup>
 
