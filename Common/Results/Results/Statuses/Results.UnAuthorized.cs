@@ -1,4 +1,4 @@
-﻿public partial class Results
+﻿public static partial class Results
 {
 	public static Result<T> UnAuthorizedResult<T>(string Detail)
 		=> Problem<T>(Statuses.Unauthorized, Detail);

@@ -1,4 +1,4 @@
-﻿public partial class Results
+﻿public static partial class Results
 {
 	public static Result<T> Errors<T>(string Type, string Detail, IReadOnlyCollection<FieldError> errors)
 		=> Results.Problem<T>(Type, Detail, errors);

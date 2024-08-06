@@ -1,4 +1,4 @@
-﻿public partial class Results
+﻿public static partial class Results
 {
 	public static Result<T> Conflict<T>(string Detail)
 		=> Problem<T>(Statuses.Conflict, Detail);

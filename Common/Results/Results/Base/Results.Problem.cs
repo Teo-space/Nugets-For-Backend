@@ -1,4 +1,4 @@
-﻿public partial class Results
+﻿public static partial class Results
 {
     public static Result<T> Problem<T>(T Value, string Type, string Detail)
         => Results.Create<T>(Value, false, Type, Detail);

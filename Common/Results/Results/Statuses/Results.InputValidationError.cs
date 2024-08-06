@@ -1,4 +1,4 @@
-﻿public partial class Results
+﻿public static partial class Results
 {
 	public static Result<T> InputValidationError<T>(string Detail)
 		=> Errors<T>("InputValidationError", Detail, Empty);

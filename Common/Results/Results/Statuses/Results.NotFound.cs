@@ -1,4 +1,4 @@
-﻿public partial class Results
+﻿public static partial class Results
 {
 	public static Result<T> NotFound<T>(string Type, string Detail)
 		=> Problem<T>(Type, Detail);

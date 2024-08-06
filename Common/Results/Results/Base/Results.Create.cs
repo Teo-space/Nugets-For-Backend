@@ -1,4 +1,4 @@
-﻿public partial class Results
+﻿public static partial class Results
 {
     static readonly IReadOnlyCollection<FieldError> Empty = [];
 
