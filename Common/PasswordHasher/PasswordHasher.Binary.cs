@@ -14,6 +14,12 @@ public static partial class PasswordHasher
         /// <param name="Hash">64 Length</param>
         /// <param name="Salt">64 Length</param>
         public readonly record struct HashedPassword(byte[] Hash, byte[] Salt);
+
+        /// <summary>
+        /// Hash password
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public static HashedPassword Hash(string password)
         {
             var salt = RandomNumberGenerator.GetBytes(keySize);
