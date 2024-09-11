@@ -6,7 +6,7 @@
     public required string Type { get; init; }
     public required string Detail { get; init; }
 
-    public required IReadOnlyCollection<FieldError> Errors { get; init; } = [];
+    public required IReadOnlyCollection<FieldError> Errors { get; init; } = Array.Empty<FieldError>();
 
 
 
