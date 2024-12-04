@@ -9,7 +9,8 @@ public static class AddFluentValidationWithValidatorsExtensions
     public static IServiceCollection AddFluentValidationWithValidators(this IServiceCollection services, 
         params Assembly[] assemblies)
     {
-        services.AddFluentValidationAutoValidation(cf => { cf.DisableDataAnnotationsValidation = true; })
+        services
+            .AddFluentValidationAutoValidation(cf =>  cf.DisableDataAnnotationsValidation = true )
             .AddFluentValidationClientsideAdapters();
 
         foreach(var assembly in assemblies)
