@@ -3,6 +3,6 @@
 /// Базовая ошибка апи
 /// </summary>
 /// <param name="message"></param>
-public class ApiException(string? message) : Exception(message)
+public class ApiException(string message) : Exception(message)
 {
 }
