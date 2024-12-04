@@ -21,7 +21,6 @@
   </Folder>
   <Folder Name="/Infrastructure/">
     <Project Path="Infrastructure/Infrastructure.EntityFrameworkCore/Infrastructure.EntityFrameworkCore.csproj" />
-    <Project Path="Infrastructure/Microsoft.EntityFrameworkCore/Microsoft.EntityFrameworkCore.csproj" />
   </Folder>
   <Folder Name="/Logging/">
     <Project Path="Logging/Api.Http.Logging/Api.Http.Logging.csproj" />
