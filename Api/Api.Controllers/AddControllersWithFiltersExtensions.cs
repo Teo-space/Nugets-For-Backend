@@ -36,7 +36,6 @@ public static class AddControllersWithFiltersExtensions
             options.JsonSerializerOptions.MaxDepth = 10;
             options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.Never;
             options.JsonSerializerOptions.NumberHandling = JsonNumberHandling.AllowReadingFromString;
-            //options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseUpper;
             options.JsonSerializerOptions.PropertyNamingPolicy = default;
         });
 
