@@ -3,6 +3,7 @@
     <Project Path="Api/Api.Auth.Jwt/Api.Auth.Jwt.csproj" />
     <Project Path="Api/Api.Auth/Api.Auth.csproj" />
     <Project Path="Api/Api.Controllers/Api.Controllers.csproj" />
+    <Project Path="Api/Api.Correlation/Api.Correlation.csproj" Id="905a1364-cfda-4a00-ac5a-ed537357a3da" />
     <Project Path="Api/Api.Cors/Api.Cors.csproj" />
     <Project Path="Api/Api.Date/Api.Date.csproj" Id="dfde280b-204d-47b7-91d5-8e9e02887dc4" />
     <Project Path="Api/Api.Exceptions/Api.Exceptions.csproj" />
