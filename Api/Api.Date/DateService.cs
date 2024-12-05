@@ -1,6 +1,6 @@
 ﻿namespace Api.Date;
 
-public sealed record DateService : IDateService
+internal sealed record DateService : IDateService
 {
     public DateTime Date { get; init; } 
 

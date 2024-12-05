@@ -1,6 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace Api.Date;
+﻿using Api.Date;
+using Microsoft.Extensions.DependencyInjection;
 
 public static class ApiDateDependencyInjection
 {
