@@ -1,9 +1,11 @@
 <Solution>
   <Folder Name="/Api/">
     <Project Path="Api/Api.Auth.Jwt/Api.Auth.Jwt.csproj" />
+    <Project Path="Api/Api.Auth.User/Api.Auth.User.csproj" Id="c5dd01d4-98df-4820-af39-e3ac139cf845" />
     <Project Path="Api/Api.Auth/Api.Auth.csproj" />
     <Project Path="Api/Api.Controllers/Api.Controllers.csproj" />
     <Project Path="Api/Api.Cors/Api.Cors.csproj" />
+    <Project Path="Api/Api.Date/Api.Date.csproj" Id="dfde280b-204d-47b7-91d5-8e9e02887dc4" />
     <Project Path="Api/Api.Exceptions/Api.Exceptions.csproj" />
     <Project Path="Api/Api.Filters/Api.Filters.csproj" />
     <Project Path="Api/Api.FluentValidation/Api.FluentValidation.csproj" />
@@ -23,8 +25,10 @@
     <Project Path="Infrastructure/Infrastructure.EntityFrameworkCore/Infrastructure.EntityFrameworkCore.csproj" />
   </Folder>
   <Folder Name="/Logging/">
+    <Project Path="Logging/Api.Calls.LogTo.ClickHouse/Api.Calls.LogTo.ClickHouse.csproj" Id="41e3b433-06d7-41a1-97df-1b2f70097291" />
     <Project Path="Logging/Api.Http.Logging/Api.Http.Logging.csproj" />
     <Project Path="Logging/Api.Logging/Api.Logging.csproj" />
+    <Project Path="Logging/Api.Requests.LogTo.ClickHouse/Api.Requests.LogTo.ClickHouse.csproj" Id="efe5b8c1-f10c-44ee-91cf-28b179c69880" />
   </Folder>
   <Folder Name="/Samples/">
     <Project Path="Samples/Api.Tests/Api.Tests.csproj" Id="ef3dd73d-0a65-41d7-92c1-f35383a1387d" />
