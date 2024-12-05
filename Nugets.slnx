@@ -1,7 +1,6 @@
 <Solution>
   <Folder Name="/Api/">
     <Project Path="Api/Api.Auth.Jwt/Api.Auth.Jwt.csproj" />
-    <Project Path="Api/Api.Auth.User/Api.Auth.User.csproj" Id="c5dd01d4-98df-4820-af39-e3ac139cf845" />
     <Project Path="Api/Api.Auth/Api.Auth.csproj" />
     <Project Path="Api/Api.Controllers/Api.Controllers.csproj" />
     <Project Path="Api/Api.Cors/Api.Cors.csproj" />
