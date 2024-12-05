@@ -7,7 +7,7 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageOutputPath>..\..\Packages</PackageOutputPath>
 
-		<Version>8.0.1</Version>
+		<Version>8.0.2</Version>
 		
 		<Authors>iteo.space</Authors>
 		<Description>Аутентификация и авторизация по схеме JWT Barear Token</Description>
