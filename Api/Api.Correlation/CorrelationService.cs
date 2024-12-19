@@ -2,15 +2,16 @@
 
 internal sealed class CorrelationService : ICorrelationService
 {
-    public Ulid Ulid { get; init; }
-    public Guid Guid => Ulid.ToGuid();
-    public string String => Ulid.ToString();
+    public Ulid AsUlid { get; init; } = Ulid.NewUlid();
+    public Guid AsGuid => AsUlid.ToGuid();
+    public string AsString => AsUlid.ToString();
 
-    public byte[] Bytes => Ulid.ToByteArray();
+    public byte[] AsBytes => AsUlid.ToByteArray();
 
-
+    /*
     public CorrelationService()
     {
-        Ulid = new Ulid();
+        AsUlid = Ulid.NewUlid();
     }
+    */
 }

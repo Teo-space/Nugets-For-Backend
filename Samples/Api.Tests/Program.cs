@@ -3,10 +3,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Logging.AddSerilogLogging(builder.Configuration);
+
+builder.Logging.AddSerilogLogging(builder.Services, builder.Configuration);
+builder.Services.AddCorrelationEnricher();
 
 var app = builder.Build();
 

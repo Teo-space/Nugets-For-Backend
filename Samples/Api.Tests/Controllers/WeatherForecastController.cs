@@ -22,6 +22,9 @@ public class WeatherForecastController : ControllerBase
     [HttpGet(Name = "GetWeatherForecast")]
     public IActionResult Get()
     {
+        _logger.LogInformation("Test");
+
+
         IReadOnlyCollection<WeatherForecast> result = Enumerable.Range(1, 5)
             .Select(index => new WeatherForecast
             {

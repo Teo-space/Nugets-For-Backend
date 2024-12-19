@@ -2,9 +2,9 @@
 
 public interface ICorrelationService
 {
-    public Ulid Ulid { get; }
-    public Guid Guid { get; }
-    public string String { get; }
+    public Ulid AsUlid { get; }
+    public Guid AsGuid { get; }
+    public string AsString { get; }
 
-    public byte[] Bytes { get; }
+    public byte[] AsBytes { get; }
 }
