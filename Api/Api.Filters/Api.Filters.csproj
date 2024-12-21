@@ -17,11 +17,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	  <Compile Remove="MiddleWares\**" />
+	  <EmbeddedResource Remove="MiddleWares\**" />
+	  <None Remove="MiddleWares\**" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="MiddleWares\" />
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
 
 	<ItemGroup>
