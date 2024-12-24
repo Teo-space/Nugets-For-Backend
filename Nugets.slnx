@@ -25,6 +25,7 @@
   <Folder Name="/Infrastructure/">
     <Project Path="Infrastructure/ExcelDataTable/ExcelDataTable.csproj" Id="fe68c64d-57f4-4327-bf56-2bbcce23ac29" />
     <Project Path="Infrastructure/Infrastructure.EntityFrameworkCore/Infrastructure.EntityFrameworkCore.csproj" />
+    <Project Path="Infrastructure/Newtonsoft.Json.FluentConfiguration/Newtonsoft.Json.FluentConfiguration.csproj" Id="82fd8b03-2a5b-4475-a051-c224d00a64ad" />
   </Folder>
   <Folder Name="/Logging/">
     <Project Path="Logging/Api.Calls.LogTo.ClickHouse/Api.Calls.LogTo.ClickHouse.csproj" Id="41e3b433-06d7-41a1-97df-1b2f70097291" />
