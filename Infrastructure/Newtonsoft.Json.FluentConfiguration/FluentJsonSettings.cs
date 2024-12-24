@@ -10,11 +10,13 @@ public static class FluentJsonSettings
         FluentContractResolver.SearchAssemblies(assemblies);
     }
 
+    public static void Clear() => FluentContractResolver.Clear();
+
     public static JsonSerializerSettings JsonSerializerSettings => new JsonSerializerSettings
     {
         Formatting = Formatting.Indented,
         ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-        MaxDepth = 1,
+        MaxDepth = 10,
         ContractResolver = new FluentContractResolver()
     };
 }

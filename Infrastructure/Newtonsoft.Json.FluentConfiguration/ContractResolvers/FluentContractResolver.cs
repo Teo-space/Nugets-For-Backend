@@ -11,11 +11,6 @@ public class FluentContractResolver : DefaultContractResolver
 
     public static void SearchAssemblies(params Assembly[] assemblies)
     {
-        SearchAssemblies((IEnumerable<Assembly>)assemblies);
-    }
-
-    public static void SearchAssemblies(IEnumerable<Assembly> assemblies)
-    {
         settings = assemblies
             .SelectMany(x => x
             .GetTypes())
@@ -40,6 +35,8 @@ public class FluentContractResolver : DefaultContractResolver
         }
         return false;
     }
+
+    public static void Clear() => settings.Clear();
 
     protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
     {
