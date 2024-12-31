@@ -23,6 +23,7 @@
     <Project Path="Common/Snowflake/Snowflake.csproj" />
   </Folder>
   <Folder Name="/Infrastructure/">
+    <Project Path="Infrastructure/DataTableExtensions/DataTableExtensions.csproj" Id="57f81ab1-ec73-4761-a532-5830a9a112ab" />
     <Project Path="Infrastructure/ExcelDataTable/ExcelDataTable.csproj" Id="fe68c64d-57f4-4327-bf56-2bbcce23ac29" />
     <Project Path="Infrastructure/Infrastructure.EntityFrameworkCore/Infrastructure.EntityFrameworkCore.csproj" />
     <Project Path="Infrastructure/Newtonsoft.Json.FluentConfiguration/Newtonsoft.Json.FluentConfiguration.csproj" Id="82fd8b03-2a5b-4475-a051-c224d00a64ad" />
