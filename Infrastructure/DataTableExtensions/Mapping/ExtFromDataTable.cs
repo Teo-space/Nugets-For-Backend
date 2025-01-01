@@ -29,7 +29,7 @@ public static class ExtFromDataTable
         }
         {
             IReadOnlyCollection<string> propertiesNotExistsInDataTableColumns = properties
-                .Where(p => dt.Columns.OfType<DataColumn>().Any(column => column.ColumnName == p.ColumnAttribute.Name))
+                .Where(p => dt.Columns.OfType<DataColumn>().Any(column => column.ColumnName == p.ColumnAttribute.Name) == false)
                 .Select(x => $"Таблица не содержит столбец '{x.ColumnAttribute.Name}' (Property: {x.PropertyInfo.Name})")
                 .ToArray();
 
