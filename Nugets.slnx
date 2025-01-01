@@ -29,11 +29,16 @@
     <Project Path="Infrastructure/Newtonsoft.Json.FluentConfiguration/Newtonsoft.Json.FluentConfiguration.csproj" Id="82fd8b03-2a5b-4475-a051-c224d00a64ad" />
   </Folder>
   <Folder Name="/Logging/">
-    <Project Path="Logging/Api.Calls.LogTo.ClickHouse/Api.Calls.LogTo.ClickHouse.csproj" Id="41e3b433-06d7-41a1-97df-1b2f70097291" />
-    <Project Path="Logging/Api.Calls.LogTo.Console/Api.Calls.LogTo.Console.csproj" Id="2e7273db-c85e-464f-b2fc-7aa2fe957d0a" />
-    <Project Path="Logging/Api.Calls.LogTo.Serilog/Api.Calls.LogTo.Serilog.csproj" Id="457edafe-d637-4d73-8f46-08ac2e17ce3f" />
     <Project Path="Logging/Api.Logging/Api.Logging.csproj" />
-    <Project Path="Logging/Api.Requests.LogTo.ClickHouse/Api.Requests.LogTo.ClickHouse.csproj" Id="efe5b8c1-f10c-44ee-91cf-28b179c69880" />
+  </Folder>
+  <Folder Name="/Logging/Api.Calls/" Id="67a5a9b4-46fb-42dc-93de-69540728e540">
+    <Project Path="Logging/Api.Calls/Api.Calls.LogTo.ClickHouse/Api.Calls.LogTo.ClickHouse.csproj" Id="78e07b94-a3c3-4a00-bfd1-e926911d3291" />
+    <Project Path="Logging/Api.Calls/Api.Calls.LogTo.Console/Api.Calls.LogTo.Console.csproj" Id="7875ef3e-8551-4225-a147-ac8183afc315" />
+    <Project Path="Logging/Api.Calls/Api.Calls.LogTo.Serilog/Api.Calls.LogTo.Serilog.csproj" Id="f495fe11-4d7e-4fde-8ec4-a268347debad" />
+    <Project Path="Logging/Api.Calls/Api.Calls.LogTo.SqlServer.ColumnStore/Api.Calls.LogTo.SqlServer.ColumnStore.csproj" Id="b2950e43-58a2-4aee-a14a-7b1eebd4e625" />
+  </Folder>
+  <Folder Name="/Logging/Api.Requests/" Id="8069af79-6295-47cc-b663-48573b94ae20">
+    <Project Path="Logging/Api.Requests/Api.Requests.LogTo.ClickHouse/Api.Requests.LogTo.ClickHouse.csproj" Id="ad74aef9-8b9e-4963-a9b9-c20e765865c6" />
   </Folder>
   <Folder Name="/Samples/">
     <Project Path="Samples/Api.Tests/Api.Tests.csproj" Id="ef3dd73d-0a65-41d7-92c1-f35383a1387d" />
