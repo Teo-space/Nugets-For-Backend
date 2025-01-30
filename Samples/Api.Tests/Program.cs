@@ -1,4 +1,5 @@
 using Api.Calls.LogTo.SqlServer.ColumnStore;
+using Api.OTel;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,9 @@ builder.Services.AddApiCallsLogger(options =>
     options.Interval = 5;
     options.BatchSize = 1000;
 });
+//OTelDependencyInjection
+builder.Services.AddOTel("Test");
+builder.Logging.AddOTel();
 
 var app = builder.Build();
 

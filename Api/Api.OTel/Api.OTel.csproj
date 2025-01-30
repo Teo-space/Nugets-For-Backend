@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageOutputPath>..\..\Packages</PackageOutputPath>
+
+		<Version>8.0.0</Version>
+
+		<Authors>iteo.space</Authors>
+		<Description>Пакет для OpenTelemetry</Description>
+		<PackageProjectUrl>https://github.com/Teo-space/Nugets</PackageProjectUrl>
+
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+
+		<PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.11.1" />
+		<PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="1.11.0-beta.1" />
+
+		<PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.11.1" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.11.0" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.11.0-beta.1" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.11.0" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.11.0" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="1.11.0-beta.1" />
+
+		<PackageReference Include="OpenTelemetry.AutoInstrumentation.Runtime.Managed" Version="1.10.0-beta.1" />
+		<PackageReference Include="OpenTelemetry.AutoInstrumentation.Runtime.Native" Version="1.10.0-beta.1" />
+	</ItemGroup>
+
+</Project>

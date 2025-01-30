@@ -12,6 +12,7 @@
     <Project Path="Api/Api.FluentValidation/Api.FluentValidation.csproj" />
     <Project Path="Api/Api.Headers/Api.Headers.csproj" />
     <Project Path="Api/Api.IpAddress/Api.IpAddress.csproj" />
+    <Project Path="Api/Api.OTel/Api.OTel.csproj" Id="1bc8b683-d221-4c45-b371-c26b52473fab" />
     <Project Path="Api/Api.RateLimiter/Api.RateLimiter.csproj" />
     <Project Path="Api/Api.Result/Api.Result.csproj" />
     <Project Path="Api/Api.Swagger/Api.Swagger.csproj" />
