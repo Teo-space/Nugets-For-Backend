@@ -5,8 +5,6 @@ using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 
-namespace Api.OTel;
-
 public static class OTelDependencyInjection
 {
     public static IServiceCollection AddOTel(this IServiceCollection services, string serviceName, Uri endpoint = default)

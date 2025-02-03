@@ -1,6 +1,3 @@
-using Api.Calls.LogTo.SqlServer.ColumnStore;
-using Api.OTel;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,9 +7,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Logging.AddSerilogLogging(builder.Services, builder.Configuration);
-builder.Services.AddCorrelationEnricher();
+builder.Logging.AddSerilogLogging(builder.Services, builder.Configuration, "Api.Tests");
 
+//builder.Services.AddCorrelationEnricher();
+
+/*
 builder.Services.AddApiCallsLogger(options =>
 {
     options.ConnectionString = builder.Configuration.GetConnectionString("LOGS")
@@ -21,6 +20,8 @@ builder.Services.AddApiCallsLogger(options =>
     options.Interval = 5;
     options.BatchSize = 1000;
 });
+*/
+
 //OTelDependencyInjection
 builder.Services.AddOTel("Test");
 builder.Logging.AddOTel();
@@ -36,7 +37,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseApiCallsLogger("TEST");
+//app.UseApiCallsLogger("TEST");
 
 app.UseAuthorization();
 app.MapControllers();
