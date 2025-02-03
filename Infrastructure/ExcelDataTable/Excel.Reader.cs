@@ -54,12 +54,16 @@
 
                 if (wsRow.All(cell => cell.Value == null)) continue;
 
-                DataRow row = dt.Rows.Add();
+                DataRow row = dt.NewRow();
+
                 foreach (var cell in wsRow)
                 {
                     row[cell.Start.Column - 1] = cell.Value;
                 }
+
+                dt.Rows.Add(row);
             }
+
             return dt;
         }
 
