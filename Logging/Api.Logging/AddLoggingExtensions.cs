@@ -1,5 +1,7 @@
 ﻿using Api.Logging.Settings;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Configuration;
@@ -59,10 +61,12 @@ public static class AddLoggingExtensions
             .MinimumLevel.Override("Microsoft.AspNetCore.Routing.EndpointMiddleware", Serilog.Events.LogEventLevel.Warning)
             .MinimumLevel.Override("Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor", Serilog.Events.LogEventLevel.Warning)
             .MinimumLevel.Override("Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker", Serilog.Events.LogEventLevel.Warning)
-#if DEBUG
-            .WriteTo.Console(outputTemplate: Templates.Body)
-#endif
             ;
+            IWebHostEnvironment webHostEnvironment = serviceProvider.GetService<IWebHostEnvironment>();
+            if (webHostEnvironment?.IsDevelopment() ?? false)
+            {
+                loggerConfiguration.WriteTo.Console(outputTemplate: Templates.Body);
+            }
 
             Configure(loggerConfiguration, loggingSettings, loggingSettings.Email);
             Configure(loggerConfiguration, loggingSettings, loggingSettings.File);
