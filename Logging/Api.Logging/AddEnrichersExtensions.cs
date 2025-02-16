@@ -1,8 +1,6 @@
 ﻿using Api.Logging.Enrichers;
 using Serilog.Core;
 
-namespace Api.Logging;
-
 public static class AddEnrichersExtensions
 {
     public static IServiceCollection AddCorrelationEnricher(this IServiceCollection services)

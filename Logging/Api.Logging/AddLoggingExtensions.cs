@@ -1,4 +1,5 @@
-﻿using Api.Logging.Settings;
+﻿using Api.Logging;
+using Api.Logging.Settings;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -6,8 +7,7 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Configuration;
 using Serilog.Sinks.Email;
-
-namespace Api.Logging;
+using Serilog.Sinks.SystemConsole.Themes;
 
 public static class AddLoggingExtensions
 {
@@ -65,7 +65,7 @@ public static class AddLoggingExtensions
             IWebHostEnvironment webHostEnvironment = serviceProvider.GetService<IWebHostEnvironment>();
             if (webHostEnvironment?.IsDevelopment() ?? false)
             {
-                loggerConfiguration.WriteTo.Console(outputTemplate: Templates.Body);
+                loggerConfiguration.WriteTo.Console(outputTemplate: Templates.Body, theme: AnsiConsoleTheme.Code);
             }
 
             Configure(loggerConfiguration, loggingSettings, loggingSettings.Email);
