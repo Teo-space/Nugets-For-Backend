@@ -7,61 +7,112 @@
     {
         static Reader() => ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-
-        public static DataTable ReadDataTableFromExcelPackage(ExcelPackage excelPackage, string sheetName)
+        public static DataTable ReadDataTableFromExcelPackage(ExcelPackage excelPackage, string sheetName, params string[] columnNames)
         {
             var sheet = !string.IsNullOrEmpty(sheetName)
                 ? excelPackage.Workbook.Worksheets.FirstOrDefault(s => s.Name == sheetName) ?? excelPackage.Workbook.Worksheets.FirstOrDefault()
                 : excelPackage.Workbook.Worksheets.FirstOrDefault();
             if (sheet == null)
             {
-                throw new Exception(string.IsNullOrEmpty(sheetName) ? "Workbook.Worksheets Is Empty" : $"WorkSheet '{sheetName}' not found");
+                throw new Exception("Не найден Лист");
             }
 
-            DataTable dt = ReadDataTableFromExcelWorkSheet(sheetName, sheet);
+            DataTable dt = ReadDataTableFromExcelWorkSheet(sheetName, sheet, columnNames);
+
             TrimStrings(dt);
+
             return dt;
         }
 
-        private static DataTable ReadDataTableFromExcelWorkSheet(string sheetName, ExcelWorksheet excelWorksheet)
+        private readonly record struct Column(string Name, int Index, Type Type);
+
+        private static DataTable ReadDataTableFromExcelWorkSheet(string tableName, ExcelWorksheet excelWorksheet, params string[] columnNames)
         {
             DataTable dt = new DataTable();
 
-            dt.TableName = sheetName ?? "Table";
+            dt.TableName = tableName ?? "Table";
 
-            //Заполняем имена и типы столбцов
-            int columnNameIndex = 1;
-            foreach (var cell in excelWorksheet.Cells[1, 1, 1, excelWorksheet.Dimension.End.Column])
+            List<Column> columnIndexes = new List<Column>();
+
+            var columns = excelWorksheet.Cells[
+                excelWorksheet.Dimension.Start.Row,
+                excelWorksheet.Dimension.Start.Column,
+                excelWorksheet.Dimension.Start.Row,
+                excelWorksheet.Dimension.End.Column].ToArray();
+
+            for (int i = 0; i < columns.Length; i++)
             {
-                //расчитываем тип колонки по первым строкам таблицы
-                var columnType = excelWorksheet.Cells[2, columnNameIndex, excelWorksheet.Dimension.End.Row, columnNameIndex]
-                    .Where(x => x.Value != null)
-                    .Take(10)
-                    .Select(x => x.Value.GetType())
-                    .GroupBy(x => x)
-                    .OrderByDescending(group => group.Count())
-                    .Select(x => x.Key)
-                    .FirstOrDefault()
-                    ?? typeof(string);
-                dt.Columns.Add(cell.Text, columnType ?? typeof(string));
+                ExcelRangeBase cell = columns[i];
 
-                columnNameIndex++;
-            }
-            //Заполняем Rows
-            for (int rowNum = 2; rowNum <= excelWorksheet.Dimension.End.Row; rowNum++)
-            {
-                var wsRow = excelWorksheet.Cells[rowNum, 1, rowNum, excelWorksheet.Dimension.End.Column];
+                string columnName = cell.Text.Trim();
 
-                if (wsRow.All(cell => cell.Value == null)) continue;
-
-                DataRow row = dt.NewRow();
-
-                foreach (var cell in wsRow)
+                if (string.IsNullOrEmpty(columnName) == false)
                 {
-                    row[cell.Start.Column - 1] = cell.Value;
+                    Type columnType = excelWorksheet.Cells[
+                        excelWorksheet.Dimension.Start.Row + 1,//Отступ шапки
+                        excelWorksheet.Dimension.Start.Column + i,
+                        excelWorksheet.Dimension.End.Row,
+                        excelWorksheet.Dimension.Start.Column + i
+                        ]//Выбрать все строки по колонке
+                        .Where(x => x.Value != null)
+                        .Take(10)
+                        .Select(x => x.Value.GetType())
+                        .GroupBy(type => type)
+                        .OrderByDescending(group => group.Count())
+                        .Select(group => group.Key)
+                        .FirstOrDefault()
+                        ?? typeof(string);
+
+                    columnIndexes.Add(new Column(columnName, excelWorksheet.Dimension.Start.Column + i, columnType));
+                }
+            }
+
+            if (columnNames.Length > 0)
+            {
+                var columnNamesNotFounded = columnNames
+                    .Where(columnName => columnIndexes.Any(ci => ci.Name == columnName) == false)
+                    .Select(s => $"\"{s}\"")
+                    .ToArray();
+
+                if (columnNamesNotFounded.Length > 0)
+                {
+                    throw new Exception($@"Не найдены столбцы в Excel файле:
+{string.Join("\n", columnNamesNotFounded)}
+");
                 }
 
-                dt.Rows.Add(row);
+                columnIndexes = columnIndexes
+                    .Where(ci => columnNames.Contains(ci.Name))
+                    .ToList();
+
+                foreach (var column in columnIndexes)
+                {
+                    dt.Columns.Add(column.Name, column.Type);
+                }
+            }
+            else
+            {
+                foreach (var column in columnIndexes)
+                {
+                    dt.Columns.Add(column.Name, column.Type);
+                }
+            }
+
+            for (int r = excelWorksheet.Dimension.Start.Row + 1; r <= excelWorksheet.Dimension.End.Row; r++)
+            {
+                var values = columnIndexes
+                    .Select(column => excelWorksheet.Cells[r, column.Index, r, column.Index].Value)
+                    .ToArray();
+
+                if (values.Any(v => v != null))
+                {
+                    DataRow row = dt.NewRow();
+
+                    row.ItemArray = values;
+
+                    dt.Rows.Add(row);
+                }
+
             }
 
             return dt;
@@ -71,11 +122,13 @@
         {
             var stringColumns = dt.Columns.OfType<DataColumn>().Where(x => x.DataType == typeof(string)).ToList();
 
+            if (stringColumns.Count == 0) return;
+
             foreach (DataRow row in dt.Rows)
             {
                 foreach (DataColumn dataColumn in stringColumns)
                 {
-                    row[dataColumn] = row.IsNull(dataColumn) ? null : row.Field<string>(dataColumn)?.Trim();//IsNull проверяет на System.DbNull
+                    row[dataColumn] = row.IsNull(dataColumn) ? null : row.Field<string>(dataColumn)?.Trim();
                 }
             }
 

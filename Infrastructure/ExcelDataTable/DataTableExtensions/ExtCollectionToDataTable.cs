@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
 using System.Reflection;
 
 public static class ExtCollectionToDataTable
