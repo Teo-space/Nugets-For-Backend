@@ -82,7 +82,7 @@ internal static class EtcdClientHelper
         }
 
         return rangeResponse.Kvs
-            .Select(kv => KeyValuePair.Create(kv.Key.ToStringUtf8(), kv.Value.ToStringUtf8()))
+            .Select(kv => KeyValuePair.Create(kv.Key.ToStringUtf8().Replace(settings.RangePath, default), kv.Value.ToStringUtf8()))
             .ToDictionary();
     }
 
@@ -105,7 +105,7 @@ internal static class EtcdClientHelper
         }
 
         return rangeResponse.Kvs
-            .Select(kv => KeyValuePair.Create(kv.Key.ToStringUtf8(), kv.Value.ToStringUtf8()))
+            .Select(kv => KeyValuePair.Create(kv.Key.ToStringUtf8().Replace(settings.RangePath, default), kv.Value.ToStringUtf8()))
             .ToDictionary();
     }
 

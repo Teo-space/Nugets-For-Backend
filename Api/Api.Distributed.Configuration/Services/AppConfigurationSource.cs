@@ -13,13 +13,25 @@ public class AppConfigurationSource(DistributedConfigurationSettings Settings)
 
     public override void Set(string key, string value)
     {
-        base.Set(key, value);
-
-        OnReload();
+        if (Data.TryGetValue(key, out string oldValue))
+        {
+            if (oldValue != value)
+            {
+                base.Set(key, value);
+                OnReload();
+            }
+        }
+        else
+        {
+            base.Set(key, value);
+            OnReload();
+        }
     }
 
     public override void Load()
     {
+        Console.WriteLine("LOAD");
+
         using EtcdClient etcdClient = EtcdClientHelper.Create(Settings);
 
         IReadOnlyDictionary<string, string> groupConfigs = etcdClient.ReadRange(Settings);

@@ -1,33 +1,28 @@
 ﻿using Api.Distributed.Configuration.Interfaces;
 using Api.Distributed.Configuration.Interfaces.Settings;
 using dotnet_etcd;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace Api.Distributed.Configuration.BackgroundServices;
 
-record UpdateConfigurationPeriodically
+class UpdateConfigurationPeriodically
 (
     DistributedConfigurationSettings Settings,
     ILogger<UpdateConfigurationPeriodically> Logger,
-    IAppConfigurationSource ConfigurationSource,
-    IConfiguration Configuration
+    IAppConfigurationSource ConfigurationSource
 )
-    : IHostedService
+    : BackgroundService
 {
     private string ServiceName => GetType().Name;
 
-    public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
-
-    public async Task StartAsync(CancellationToken stoppingToken)
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         Logger.LogInformation("[{Settings}]", Settings);
 
         while (stoppingToken.IsCancellationRequested == false)
         {
-            //await Task.Delay((int)(1000 * Settings.Interval), stoppingToken);
-            await Task.Delay(1000, stoppingToken);
+            await Task.Delay(1000 * 10, stoppingToken);
 
             try
             {

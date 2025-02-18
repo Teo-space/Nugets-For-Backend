@@ -24,7 +24,10 @@ public static class AddDistributedConfigurationExt
         {
             configure(Settings);
         }
-
+        if (string.IsNullOrEmpty(Settings.Connection))
+        {
+            throw new Exception("Configure DistributedConfiguration Section!");
+        }
         {
             var сonfigurationSource = new AppConfigurationSource(Settings);
 
@@ -35,13 +38,13 @@ public static class AddDistributedConfigurationExt
 
         applicationBuilder.Services.AddHostedService((serviceProvider) =>
         {
-            ILogger<UpdateConfigurationPeriodically> logger = serviceProvider.GetService<ILogger<UpdateConfigurationPeriodically>>();
+            ILogger<UpdateConfigurationWatcher> logger = serviceProvider.GetService<ILogger<UpdateConfigurationWatcher>>();
             IAppConfigurationSource appConfigurationSource = serviceProvider.GetRequiredService<IAppConfigurationSource>();
 
-            return new UpdateConfigurationPeriodically(Settings, logger, appConfigurationSource,
-                applicationBuilder.Configuration);
+            return new UpdateConfigurationWatcher(Settings, logger, appConfigurationSource);
         });
     }
+
 
 }
 

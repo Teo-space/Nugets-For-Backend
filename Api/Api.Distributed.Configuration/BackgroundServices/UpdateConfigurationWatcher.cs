@@ -11,7 +11,7 @@ namespace Api.Distributed.Configuration.BackgroundServices;
 class UpdateConfigurationWatcher
 (
     DistributedConfigurationSettings Settings,
-    ILogger<UpdateConfigurationPeriodically> Logger,
+    ILogger<UpdateConfigurationWatcher> Logger,
     IAppConfigurationSource ConfigurationSource
 )
     : BackgroundService
@@ -62,7 +62,7 @@ class UpdateConfigurationWatcher
         {
             Dictionary<string, string> eventsOnPut = watchResponse.Events
                 .Where(e => e.Type == Mvccpb.Event.Types.EventType.Put)
-                .Select(e => KeyValuePair.Create(e.Kv.Key.ToStringUtf8(), e.Kv.Value.ToStringUtf8()))
+                .Select(e => KeyValuePair.Create(e.Kv.Key.ToStringUtf8().Replace(Settings.RangePath, default), e.Kv.Value.ToStringUtf8()))
                 .ToDictionary();
 
             if (eventsOnPut.Count > 0)
