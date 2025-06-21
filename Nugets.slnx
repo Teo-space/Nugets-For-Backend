@@ -31,14 +31,14 @@
   <Folder Name="/Logging/">
     <Project Path="Logging/Api.Logging/Api.Logging.csproj" />
   </Folder>
-  <Folder Name="/Logging/Api.Calls/" Id="67a5a9b4-46fb-42dc-93de-69540728e540">
-    <Project Path="Logging/Api.Calls/Api.Calls.LogTo.ClickHouse/Api.Calls.LogTo.ClickHouse.csproj" Id="78e07b94-a3c3-4a00-bfd1-e926911d3291" />
-    <Project Path="Logging/Api.Calls/Api.Calls.LogTo.Console/Api.Calls.LogTo.Console.csproj" Id="7875ef3e-8551-4225-a147-ac8183afc315" />
-    <Project Path="Logging/Api.Calls/Api.Calls.LogTo.Serilog/Api.Calls.LogTo.Serilog.csproj" Id="f495fe11-4d7e-4fde-8ec4-a268347debad" />
-    <Project Path="Logging/Api.Calls/Api.Calls.LogTo.SqlServer.ColumnStore/Api.Calls.LogTo.SqlServer.ColumnStore.csproj" Id="b2950e43-58a2-4aee-a14a-7b1eebd4e625" />
+  <Folder Name="/Logging/Api.Logging.IncomingRequests/" Id="36d591c7-65c7-a0d1-1cbc-10cde441bdc8">
+    <Project Path="Logging/Api.Logging.IncomingRequests/Api.Logging.IncomingRequests.LogTo.ClickHouse/Api.Logging.IncomingRequests.LogTo.ClickHouse.csproj" Id="68134506-4c2d-4a86-9cd6-730e97628b0c" />
+    <Project Path="Logging/Api.Logging.IncomingRequests/Api.Logging.IncomingRequests.LogTo.Console/Api.Logging.IncomingRequests.LogTo.Console.csproj" Id="f4bc8781-f64a-4ea5-83e2-f370ba296a23" />
+    <Project Path="Logging/Api.Logging.IncomingRequests/Api.Logging.IncomingRequests.LogTo.ILogger/Api.Logging.IncomingRequests.LogTo.ILogger.csproj" Id="079a7fb6-1a10-45b9-9571-1410ff98e013" />
+    <Project Path="Logging/Api.Logging.IncomingRequests/Api.Logging.IncomingRequests.LogTo.SqlServer.ColumnStore/Api.Logging.IncomingRequests.LogTo.SqlServer.ColumnStore.csproj" Id="37990141-9ea3-4467-b29b-58bf4bb6e928" />
   </Folder>
-  <Folder Name="/Logging/Api.Requests/" Id="8069af79-6295-47cc-b663-48573b94ae20">
-    <Project Path="Logging/Api.Requests/Api.Requests.LogTo.ClickHouse/Api.Requests.LogTo.ClickHouse.csproj" Id="ad74aef9-8b9e-4963-a9b9-c20e765865c6" />
+  <Folder Name="/Logging/Api.Logging.OutgoingRequests/" Id="cfdfc96e-883c-428b-8506-acbcae746f4a">
+    <Project Path="Logging/Api.Logging.OutgoingRequests/Api.Logging.OutgoingRequests.LogTo.ClickHouse/Api.Logging.OutgoingRequests.LogTo.ClickHouse.csproj" Id="ada1fd7e-870c-495b-b865-04ecd9b303b0" />
   </Folder>
   <Folder Name="/Samples/">
     <Project Path="Samples/Api.Tests/Api.Tests.csproj" Id="ef3dd73d-0a65-41d7-92c1-f35383a1387d" />

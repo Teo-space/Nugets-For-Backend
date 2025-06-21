@@ -13,7 +13,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Api\Api.Distributed.Configuration\Api.Distributed.Configuration.csproj" />
     <ProjectReference Include="..\..\Api\Api.OTel\Api.OTel.csproj" />
-    <ProjectReference Include="..\..\Logging\Api.Calls\Api.Calls.LogTo.SqlServer.ColumnStore\Api.Calls.LogTo.SqlServer.ColumnStore.csproj" />
     <ProjectReference Include="..\..\Logging\Api.Logging\Api.Logging.csproj" />
   </ItemGroup>
 
