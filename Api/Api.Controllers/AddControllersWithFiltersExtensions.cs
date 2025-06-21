@@ -14,20 +14,15 @@ public static class AddControllersWithFiltersExtensions
         {
             options.InvalidModelStateResponseFactory = (actionContext) =>
             {
-                var validationDetails = actionContext.ModelState
-                    .Where(modelError => modelError.Value != null && modelError.Value.Errors.Any())
-                    .Select(modelError => new FieldError()
-                    {
-                        FieldName = modelError.Key,
-                        ErrorMessages = modelError.Value!.Errors.Select(x => x.ErrorMessage).ToArray()
-                    }).ToArray();
+                IReadOnlyCollection<string> errors = actionContext.ModelState
+                    .Where(modelError => modelError.Value != null)
+                    .Where(modelError => modelError.Value.Errors.Any())
+                    .SelectMany(modelError => modelError.Value.Errors
+                    .Select(x => $"{modelError.Key} : '{x.ErrorMessage}'"))
+                    .Order()
+                    .ToArray();
 
-                var result = Results.Errors<HttpStatusCode>(
-                    Type: HttpStatusCode.BadRequest.ToString(), 
-                    Detail: "ValidationErrors", 
-                    errors: validationDetails);
-
-                return new BadRequestObjectResult(result);
+                return Results.Bad("Input Validation Error", errors).ToActionResult();
             };
         })
         .AddJsonOptions(options =>

@@ -27,8 +27,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\Common\Results\Results.csproj" />
 	  <ProjectReference Include="..\Api.Exceptions\Api.Exceptions.csproj" />
-	  <ProjectReference Include="..\Api.Result\Api.Result.csproj" />
 	</ItemGroup>
 
 </Project>

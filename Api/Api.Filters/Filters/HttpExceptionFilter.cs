@@ -20,7 +20,9 @@ public class HttpExceptionFilter : IActionFilter, IOrderedFilter
         if (context?.Exception is not null)
         {
             var exception = context.Exception;
-            var exceptionType = exception.GetType().Name;
+
+            string exceptionType = exception.GetType().Name;
+
             var status = exception switch
             {
                 //Пользователь авторизован, но нет прав для выполнения операции
@@ -43,31 +45,55 @@ public class HttpExceptionFilter : IActionFilter, IOrderedFilter
 
             context.ExceptionHandled = true;
 
-            if (status == HttpStatusCode.InternalServerError)
+            if (status == HttpStatusCode.Unauthorized)
             {
-                context.Result = new JsonResult(Results.Problem(status, exceptionType, string.Empty))//не выводим неожиданные ошибки на фронт
-                {
-                    StatusCode = (int)status
-                };
-                logger.LogError(exception, $"Произошла ошибка {{Exception}} {{Message}}", exceptionType, exception.Message);
+                context.ExceptionHandled = true;
+
+                context.Result = Results.UnAuthorized($"[{exceptionType}] {exception.Message}").ToActionResult();
+
+                logger.LogWarning(exception, $"Статус '{status}'. Произошла ошибка {{Exception}} {{Message}}", exceptionType, exception.Message);
+            }
+            else if (status == HttpStatusCode.Forbidden)
+            {
+                context.ExceptionHandled = true;
+
+                context.Result = Results.NotEnoughPermissions($"[{exceptionType}] {exception.Message}").ToActionResult();
+
+                logger.LogWarning(exception, $"Статус '{status}'. Произошла ошибка {{Exception}} {{Message}}", exceptionType, exception.Message);
+            }
+            else if (status == HttpStatusCode.NotFound)
+            {
+                context.ExceptionHandled = true;
+
+                context.Result = Results.NotFound($"[{exceptionType}] {exception.Message}").ToActionResult();
+
+                logger.LogWarning(exception, $"Статус '{status}'.Произошла ошибка {{Exception}} {{Message}}", exceptionType, exception.Message);
+            }
+            else if (status == HttpStatusCode.Conflict)
+            {
+                context.ExceptionHandled = true;
+
+                context.Result = Results.Conflict($"[{exceptionType}] {exception.Message}").ToActionResult();
+
+                logger.LogWarning(exception, $"Статус '{status}'.Произошла ошибка {{Exception}} {{Message}}", exceptionType, exception.Message);
             }
             else if (status == HttpStatusCode.BadRequest)
             {
-                context.Result = new JsonResult(Results.Problem(status, exceptionType, exception.Message))
-                {
-                    StatusCode = (int)status
-                };
-                logger.LogWarning(exception, $"Произошла ошибка {{Exception}} {{Message}}", exceptionType, exception.Message);
-            }
-            else
-            {
-                context.Result = new JsonResult(Results.Problem<HttpStatusCode>(status.ToString(), exception.Message))
-                {
-                    StatusCode = (int)status
-                };
+                context.ExceptionHandled = true;
 
-                logger.LogWarning(exception, $"Произошла ошибка {{Exception}} {{Message}}", exceptionType, exception.Message);
+                context.Result = Results.Bad($"[{exceptionType}] {exception.Message}").ToActionResult();
+
+                logger.LogWarning(exception, $"Статус '{status}'.Произошла ошибка {{Exception}} {{Message}}", exceptionType, exception.Message);
             }
+            else if (status == HttpStatusCode.InternalServerError)
+            {
+                context.ExceptionHandled = true;
+
+                context.Result = Results.Exception($"[{exceptionType}] {exception.Message}").ToActionResult();
+
+                logger.LogWarning(exception, $"Статус '{status}'.Произошла ошибка {{Exception}} {{Message}}", exceptionType, exception.Message);
+            }
+
         }
     }
 }

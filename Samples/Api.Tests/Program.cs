@@ -8,7 +8,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Logging.AddSerilogLogging(builder.Services, builder.Configuration, "Api.Tests");
-builder.Services.AddCorrelationEnricher().AddHttpContextEnricher();
+builder.Services.AddHttpContextEnricher();
 
 
 builder.AddDistributedConfiguration();

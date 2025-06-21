@@ -1,15 +1,15 @@
 ﻿using Microsoft.OpenApi.Models;
 
-public static class JWTSwaggerExtensions
+public static class AddJWTSwaggerExtensions
 {
     /// <summary>
     /// Add Swagger with Bearer JWT
     /// </summary>
     /// <param name="xmlComments">Path.Combine(AppContext.BaseDirectory, $"File.xml")</param>
-    public static IServiceCollection AddJWTSwagger(this IServiceCollection services, string title,
-        params string[] xmlComments)
+    public static IServiceCollection AddJWTSwagger(this IServiceCollection services, string title, params string[] xmlComments)
     {
         services.AddEndpointsApiExplorer();
+
         services.AddSwaggerGen(options =>
         {
             options.SwaggerDoc("v1", new OpenApiInfo { Title = title, Version = "v1" });
@@ -44,7 +44,6 @@ public static class JWTSwaggerExtensions
                 }
             });
         });
-
         return services;
     }
 }

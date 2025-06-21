@@ -3,7 +3,7 @@ using System.Transactions;
 
 namespace Microsoft.EntityFrameworkCore;
 
-public static class EntityFrameworkExtenstions
+public static class NoLockExtenstions
 {
     private static TransactionScope CreateTrancationAsync()
     {

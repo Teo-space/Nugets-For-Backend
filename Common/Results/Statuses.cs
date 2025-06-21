@@ -9,7 +9,6 @@
     /// </summary>
     public const string NoContent = "NoContent";
 
-
     /// <summary>
     /// 400
     /// </summary>
@@ -18,10 +17,6 @@
     /// 404
     /// </summary>
     public const string NotFound = "NotFound";
-    /// <summary>
-    /// 404
-    /// </summary>
-    public const string ParentNotFound = "ParentNotFound";
     /// <summary>
     /// 409
     /// </summary>
@@ -39,12 +34,8 @@
     /// </summary>
     public const string NotEnoughPermissions = "NotEnoughPermissions";
 
-
     /// <summary>
     /// 500
     /// </summary>
     public const string InternalServerError = "InternalServerError";
-
-
-
 }

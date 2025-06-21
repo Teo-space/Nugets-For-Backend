@@ -9,6 +9,7 @@ public static class AddApikeySwaggerExtensions
     public static IServiceCollection AddApikeySwagger(this IServiceCollection services, string title, params string[] xmlComments)
     {
         services.AddEndpointsApiExplorer();
+
         services.AddSwaggerGen(options =>
         {
             foreach (var xmlComment in xmlComments)
