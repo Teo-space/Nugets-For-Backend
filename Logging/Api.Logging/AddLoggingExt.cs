@@ -9,6 +9,7 @@ using Serilog;
 using Serilog.Configuration;
 using Serilog.Events;
 using Serilog.Sinks.Email;
+using Serilog.Sinks.Graylog;
 
 public static class AddLoggingExtensions
 {
