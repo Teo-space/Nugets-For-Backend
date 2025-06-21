@@ -6,15 +6,16 @@ using System.Security.Claims;
 
 namespace Api.Logging.Enrichers;
 
-class HttpContextEnricher(IHttpContextAccessor contextAccessor) : ILogEventEnricher
+sealed record HttpContextEnricher(IHttpContextAccessor contextAccessor) : ILogEventEnricher
 {
     public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
     {
         ILogger<HttpContextEnricher> logger = contextAccessor?.HttpContext?.RequestServices?.GetService<ILogger<HttpContextEnricher>>();
+
         try
         {
             ClaimsPrincipal user = contextAccessor.HttpContext?.User;
-            if(user == null) return;
+            if (user == null) return;
 
             string userName = user?.Identity?.Name;
             if (!string.IsNullOrEmpty(userName))

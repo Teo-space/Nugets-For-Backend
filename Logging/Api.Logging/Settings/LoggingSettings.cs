@@ -1,33 +1,32 @@
-﻿namespace Api.Logging.Settings;
+﻿using Api.Logging.Settings.Configs;
+using Serilog.Events;
+
+namespace Api.Logging.Settings;
 
 public sealed record LoggingSettings
 {
-    public string Template { get; set; } = default;
+    public LogEventLevel LogLevel { get; set; } = LogEventLevel.Information;
+
+    public string Template { get; set; }
 
     public EmailLoggingConfiguration Email { get; set; }
     public FileLoggingConfiguration File { get; set; }
     public SeqLoggingConfiguration Seq { get; set; }
+    public GrayLogLoggingConfiguration GrayLog { get; set; }
 
-    public SeqLoggingConfiguration GrayLog { get; set; }
 
-    public LoggingSettings AddEmailLogging(string From, IReadOnlyCollection<string> To, string Host, int Port = 25, string Template = default)
+    internal readonly Dictionary<string, string> Properties = new Dictionary<string, string>();
+    public void WithProperty(string name, string value)
     {
-        this.Email = new EmailLoggingConfiguration(From, To, Host, Port, Template);
-
-        return this;
+        Properties[name] = value;
     }
 
-    public LoggingSettings AddFileLogging(string Path, string Template = default)
+    internal readonly Dictionary<string, LogEventLevel> Overrides = new Dictionary<string, LogEventLevel>();
+    public void WithOverride(string name, LogEventLevel logEventLevel)
     {
-        this.File = new FileLoggingConfiguration(Path, Template);
-
-        return this;
+        Overrides[name] = logEventLevel;
     }
 
-    public LoggingSettings AddSeqLogging(string ServerUrl, string ApiKey)
-    {
-        this.Seq = new SeqLoggingConfiguration(ServerUrl, ApiKey);
-
-        return this;
-    }
 }
+
+
