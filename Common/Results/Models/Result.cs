@@ -5,5 +5,4 @@
     public required string Detail { get; init; }
 
     public required IReadOnlyCollection<string> Errors { get; init; } = Array.Empty<string>();
-
 }

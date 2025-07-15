@@ -44,6 +44,7 @@
     <Project Path="Samples/Api.Tests/Api.Tests.csproj" Id="ef3dd73d-0a65-41d7-92c1-f35383a1387d" />
     <Project Path="Samples/Enum.Sample/Enum.Sample.csproj" />
     <Project Path="Samples/PasswordHashing/PasswordHashing.csproj" />
+    <Project Path="Samples/ResultsTest/ResultsTest.csproj" Id="4a16ff60-e3a8-4085-a64c-06737e6e7301" />
     <Project Path="Samples/Snowflake.Sample/Snowflake.Sample.csproj" />
   </Folder>
 </Solution>
