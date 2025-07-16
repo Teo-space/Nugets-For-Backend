@@ -1,4 +1,4 @@
-﻿public partial record Result
+﻿public readonly partial record struct Result
 {
     public static implicit operator ErrorResult(Result result) => result.ToErrorResult();
 

@@ -1,4 +1,4 @@
-﻿public partial record Result<T>
+﻿public readonly partial record struct Result<T>
 {
     public static implicit operator T(Result<T> Result) => Result.Value;
     public static implicit operator Result<T>(T o) => Results.Ok<T>(o);

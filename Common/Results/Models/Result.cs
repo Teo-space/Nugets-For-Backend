@@ -1,4 +1,4 @@
-﻿public partial record Result
+﻿public readonly partial record struct Result()
 {
     public required bool Success { get; init; }
     public required string Type { get; init; }

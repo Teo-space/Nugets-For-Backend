@@ -1,4 +1,4 @@
-﻿public partial record Result<T>()
+﻿public readonly partial record struct Result<T>()
 {
     public required T Value { get; init; }
 

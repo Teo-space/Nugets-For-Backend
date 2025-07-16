@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-public partial record Result<TSuccess, TError>
+public readonly partial record struct Result<TSuccess, TError>
 {
     public static implicit operator ActionResult(Result<TSuccess, TError> result) => result.ToActionResult();
 
