@@ -16,9 +16,7 @@
 		<Description>Pattern Result</Description>
 		<PackageProjectUrl>https://github.com/Teo-space/Nugets</PackageProjectUrl>
 		<PackageTags>Results</PackageTags>
-		<PackageReleaseNotes>
-			Add Results.MapTo
-		</PackageReleaseNotes>
+
 	</PropertyGroup>
 
 	<ItemGroup>
