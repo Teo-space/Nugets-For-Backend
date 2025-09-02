@@ -2,7 +2,7 @@
 
 namespace System;
 
-public abstract partial class Enum<TEnum> where TEnum : Enum<TEnum>
+public abstract partial record Enum<TEnum> where TEnum : Enum<TEnum>
 {
     public static IReadOnlyCollection<TEnum> Collection { get; }
     public static IReadOnlyCollection<int> Keys { get; }

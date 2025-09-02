@@ -1,7 +1,7 @@
 ﻿namespace Enum.Sample.Domain;
 
 
-public class OrderStatus : Enum<OrderStatus>
+public sealed record OrderStatus : Enum<OrderStatus>
 {
     protected OrderStatus(int Key, string Value) : base(Key, Value) { }
 

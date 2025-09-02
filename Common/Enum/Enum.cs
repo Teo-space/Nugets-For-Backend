@@ -1,6 +1,6 @@
 ﻿namespace System;
 
-public abstract partial class Enum<TEnum> where TEnum : Enum<TEnum>
+public abstract partial record Enum<TEnum> where TEnum : Enum<TEnum>
 {
     protected Enum(int key, string value)
     {
@@ -9,8 +9,8 @@ public abstract partial class Enum<TEnum> where TEnum : Enum<TEnum>
     }
 
 
-    public int Key { get; set; }
-    public string Value { get; set; }
+    public int Key { get; init; }
+    public string Value { get; init; }
 
     public sealed override string ToString() => Value;
 
