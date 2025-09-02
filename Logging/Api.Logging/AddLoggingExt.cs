@@ -107,7 +107,6 @@ public static class AddLoggingExtensions
             .MinimumLevel.Override("Microsoft.EntityFrameworkCore.Model.Validation", LogEventLevel.Warning)
 
             .MinimumLevel.Override("MicroElements.Swashbuckle.FluentValidation", LogEventLevel.Warning)
-            .MinimumLevel.Override("Ixia.Api.Auth.Basic.Simple.Handler.BasicAuthorizationHandler", LogEventLevel.Warning)
             ;
     }
 
