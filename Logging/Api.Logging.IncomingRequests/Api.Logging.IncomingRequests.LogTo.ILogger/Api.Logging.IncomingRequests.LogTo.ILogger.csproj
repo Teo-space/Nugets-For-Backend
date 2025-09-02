@@ -7,7 +7,7 @@
 		<Authors>iteo.space</Authors>
 
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<PackageOutputPath>..\..\Packages</PackageOutputPath>
+		<PackageOutputPath>..\..\..\Packages</PackageOutputPath>
 	</PropertyGroup>
 
 	<ItemGroup>

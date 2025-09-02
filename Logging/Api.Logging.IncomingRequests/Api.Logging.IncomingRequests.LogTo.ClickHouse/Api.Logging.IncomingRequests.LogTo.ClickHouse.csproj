@@ -11,7 +11,7 @@
 		<PackageProjectUrl>https://github.com/Teo-space/Nugets</PackageProjectUrl>
 
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<PackageOutputPath>..\..\Packages</PackageOutputPath>
+		<PackageOutputPath>..\..\..\Packages</PackageOutputPath>
 	</PropertyGroup>
 
 	<ItemGroup>
